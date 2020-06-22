@@ -92,7 +92,7 @@ pub fn calibrate_span_point(device_number: u8, value: u16) -> Packet {
     get_command_with_bytes34(
         Command::CalibrateSpan,
         device_number,
-        (value & 0xff00 >> 8) as u8,
+        ((value & 0xff00) >> 8) as u8,
         (value & 0xff) as u8,
     )
 }
@@ -104,7 +104,7 @@ pub fn set_detection_range(device_number: u8, value: u16) -> Packet {
     get_command_with_bytes34(
         Command::SetSensorDetectionRange,
         device_number,
-        (value & 0xff00 >> 8) as u8,
+        ((value & 0xff00) >> 8) as u8,
         (value & 0xff) as u8,
     )
 }
